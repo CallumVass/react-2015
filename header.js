@@ -6,7 +6,7 @@ class Header extends React.Component {
         super();
 
         this.state = {
-            text: 'Dashboard'
+            text: 'Welcome'
         }
     }
 
