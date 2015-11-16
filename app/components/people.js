@@ -1,6 +1,8 @@
 import React from 'react';
 import aja from 'aja';
 
+import Person from './person';
+
 class People extends React.Component {
     constructor() {
         super();
@@ -25,7 +27,7 @@ class People extends React.Component {
                 <ul>
                     {
                         this.state.people.map((person) => {
-                            return (<li>{person.name}</li>)
+                            return <Person key={person.id} name={person.name} />
                         })
                     }
                 </ul>
