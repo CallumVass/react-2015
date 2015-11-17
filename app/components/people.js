@@ -1,5 +1,6 @@
 import React from 'react';
 import aja from 'aja';
+import {Link} from 'react-router';
 
 import Person from './person';
 
@@ -24,13 +25,15 @@ class People extends React.Component {
     render() {
         return (
             <div>
-                <ul>
-                    {
-                        this.state.people.map((person) => {
-                            return <Person key={person.id} name={person.name} />
-                        })
-                    }
-                </ul>
+                {
+                    this.state.people.map((person) => {
+                        return (
+                            <div key={person.id}>
+                                <Link to={`/${person.id}`}>{person.name}</Link>
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }
