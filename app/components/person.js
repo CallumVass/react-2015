@@ -7,9 +7,7 @@ class Person extends React.Component {
 
     render() {
         return (
-            <div>
-                <li>{this.props.name}</li>
-            </div>
+            <li>{this.props.name}</li>
         )
     }
 }
