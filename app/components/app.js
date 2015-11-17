@@ -1,5 +1,4 @@
 import React from 'react';
-import People from './people';
 
 class App extends React.Component {
     constructor()
