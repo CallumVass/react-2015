@@ -11,7 +11,7 @@ class Person extends React.Component {
 
     componentDidMount() {
         aja()
-            .url("http://jsonplaceholder.typicode.com/users/" + this.props.params.id)
+            .url(`http://jsonplaceholder.typicode.com/users/${this.props.params.id}`)
             .on('success', (result) => {
                 this.setState({person: result});
             })
