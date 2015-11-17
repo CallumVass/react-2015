@@ -8,8 +8,8 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>People</h1>
+            <div className="ui container">
+                <h1 className="ui header">People</h1>
                 {this.props.children}
             </div>
         )

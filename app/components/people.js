@@ -24,12 +24,14 @@ class People extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="ui items">
                 {
                     this.state.people.map((person) => {
                         return (
-                            <div key={person.id}>
-                                <Link to={`/${person.id}`}>{person.name}</Link>
+                            <div key={person.id} className="item">
+                                <div className="content">
+                                    <Link className="header" to={`/${person.id}`}>{person.name}</Link>
+                                </div>
                             </div>
                         )
                     })
