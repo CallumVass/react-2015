@@ -1,16 +1,31 @@
 import React from 'react';
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import AppBar from 'material-ui/lib/app-bar';
+import MyTheme from '../themes/custom-theme';
+
 
 class App extends React.Component {
-    constructor()
-    {
+    constructor() {
         super();
+    }
+
+    static childContextTypes = {
+        muiTheme: React.PropTypes.object
+    };
+
+    getChildContext() {
+        return {
+            muiTheme: ThemeManager.getMuiTheme(MyTheme)
+        };
     }
 
     render() {
         return (
-            <div className="ui container">
-                <h1 className="ui header">People</h1>
+            <div>
+
+                <AppBar title="People"/>
                 {this.props.children}
+
             </div>
         )
     }
