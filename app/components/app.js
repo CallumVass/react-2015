@@ -23,7 +23,7 @@ class App extends React.Component {
         return (
             <div>
 
-                <AppBar title="People"/>
+                <AppBar title="People" showMenuIconButton={false}/>
                 {this.props.children}
 
             </div>
