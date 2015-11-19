@@ -2,9 +2,8 @@ import React from 'react';
 import aja from 'aja';
 import {Link} from 'react-router';
 import mui from 'material-ui';
-import Person from './person';
 
-let { Card, CardHeader, CardActions, FlatButton, Avatar } = mui;
+let { Card, CardHeader, CardActions, FlatButton, Avatar, AppBar } = mui;
 
 class People extends React.Component {
     constructor() {
@@ -26,7 +25,8 @@ class People extends React.Component {
 
     render() {
         return (
-            <div className="ui items">
+            <div>
+                <AppBar title="People" showMenuIconButton={false}/>
                 {
                     this.state.people.map((person) => {
 

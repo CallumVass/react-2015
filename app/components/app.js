@@ -1,6 +1,5 @@
 import React from 'react';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
-import AppBar from 'material-ui/lib/app-bar';
 import MyTheme from '../themes/custom-theme';
 
 
@@ -22,10 +21,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-
-                <AppBar title="People" showMenuIconButton={false}/>
                 {this.props.children}
-
             </div>
         )
     }

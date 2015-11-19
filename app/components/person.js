@@ -1,11 +1,15 @@
 import React from 'react';
 import aja from 'aja';
+import mui from 'material-ui';
+
+let { Card, CardTitle, CardText, AppBar } = mui;
 
 class Person extends React.Component {
     constructor() {
         super();
         this.state = {
-            person: {}
+            person: {},
+            posts: []
         }
     }
 
@@ -16,12 +20,34 @@ class Person extends React.Component {
                 this.setState({person: result});
             })
             .go();
+        aja()
+            .url(`http://jsonplaceholder.typicode.com/posts?userId=${this.props.params.id}`)
+            .on('success', (result) => {
+                this.setState({posts: result});
+            })
+            .go();
     }
 
     render() {
         return (
             <div>
-                {this.state.person.name}
+                <AppBar title={this.state.person.name} showMenuIconButton={false}/>
+
+                {
+                    this.state.posts.map((post) => {
+
+                        return (
+                            <Card key={post.id}>
+                                <CardTitle
+                                    title={post.title}/>
+                                <CardText>
+                                    {post.body}
+                                </CardText>
+                            </Card>
+                        )
+                    })
+                }
+
             </div>
         )
     }
