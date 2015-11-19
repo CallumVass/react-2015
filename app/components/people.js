@@ -1,7 +1,7 @@
 import React from 'react';
 import aja from 'aja';
 import {Link} from 'react-router';
-import { Card, CardTitle, CardActions } from 'material-ui/lib/card';
+import { Card, CardHeader, CardActions } from 'material-ui/lib/card';
 import FlatButton from 'material-ui/lib/flat-button';
 import Avatar from 'material-ui/lib/avatar';
 
@@ -30,9 +30,15 @@ class People extends React.Component {
             <div className="ui items">
                 {
                     this.state.people.map((person) => {
+
+                        var firstCharacter = person.name.substring(0, 1);
+
                         return (
                             <Card key={person.id}>
-                                <CardTitle title={person.name} subtitle="Subtitle"/>
+                                <CardHeader
+                                    title={person.name}
+                                    subtitle={person.email}
+                                    avatar={<Avatar>{firstCharacter}</Avatar>}/>
                                 <CardActions>
                                     <FlatButton label="Details"
                                                 linkButton={true}
