@@ -1,11 +1,10 @@
 import React from 'react';
 import aja from 'aja';
 import {Link} from 'react-router';
-import { Card, CardHeader, CardActions } from 'material-ui/lib/card';
-import FlatButton from 'material-ui/lib/flat-button';
-import Avatar from 'material-ui/lib/avatar';
-
+import mui from 'material-ui';
 import Person from './person';
+
+let { Card, CardHeader, CardActions, FlatButton, Avatar } = mui;
 
 class People extends React.Component {
     constructor() {
