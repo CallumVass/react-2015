@@ -1,9 +1,20 @@
+var webpack = require('webpack');
+
 module.exports = {
-    entry: "./app/index.js",
+    entry: {
+        main: [
+            "webpack/hot/only-dev-server",
+            "./app/index.js"
+        ]
+    },
     output: {
         path: __dirname,
         filename: "bundle.js"
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
     module: {
         loaders: [
             {
