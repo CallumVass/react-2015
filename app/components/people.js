@@ -1,5 +1,5 @@
 import React from 'react';
-import aja from 'aja';
+import $ from 'jquery';
 import {Link} from 'react-router';
 import mui from 'material-ui';
 
@@ -15,12 +15,10 @@ class People extends React.Component {
     }
 
     componentDidMount() {
-        aja()
-            .url("http://jsonplaceholder.typicode.com/users")
-            .on('success', (result) => {
+        $.getJSON("http://jsonplaceholder.typicode.com/users")
+            .then((result) => {
                 this.setState({people: result});
-            })
-            .go();
+            });
     }
 
     render() {

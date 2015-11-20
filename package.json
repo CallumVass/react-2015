@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aja": "^0.4.1",
     "history": "^1.13.1",
+    "jquery": "^2.1.4",
     "material-ui": "^0.13.3",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
